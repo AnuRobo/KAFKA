@@ -18,6 +18,7 @@ public class HelloProducer {
         LOGGER.info("Creating Kafka Producer....");
 
         Properties props = new Properties();
+        // purpose of the client id is to track the source of the message
         props.put(ProducerConfig.CLIENT_ID_CONFIG, AppConfigs.applicationID); // Purpose of the client id is to track the source of the message
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,AppConfigs.bootstrapServers);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, IntegerSerializer.class.getName());
